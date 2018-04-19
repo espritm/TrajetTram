@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/listview_detailtrajets_darkgrey" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/item_display_arret_layout_generalInfos"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:animateLayoutChanges="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/item_display_arret_layout_horaire">
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/trajetdetails_textsize"
+              android:gravity="left"
+              android:textStyle="bold"
+              android:ellipsize="end"
+              android:maxLines="1"
+              android:id="@+id/item_display_arret_textview_name"
+              android:layout_marginLeft="10dp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/item_display_arret_layout_horaire"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/listview_detailtrajets_lightgrey"
+            android:gravity="center"
+            android:paddingTop="11dp"
+            android:paddingBottom="10dp"
+            android:layout_alignParentRight="true">
+          <TextView
+              android:layout_width="@dimen/activitytrajetDetails_legend_column_Horaire_width"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/trajetdetails_textsize"
+              android:id="@+id/item_display_arret_textview_horairePassage"
+              android:gravity="center" />
+        </LinearLayout>
+      </RelativeLayout>
+      </LinearLayout>
+      <RelativeLayout
+        android:id="@+id/item_display_arret_layout_hilight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/hilightArret_dayMode"/>
+</FrameLayout>
+</LinearLayout>

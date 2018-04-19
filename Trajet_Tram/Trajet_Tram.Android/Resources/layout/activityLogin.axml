@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:gravity="center">
+<RelativeLayout
+    android:id="@+id/activityLogin_relativeLayout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+      android:layout_marginBottom="25dp">
+    <android.support.v7.widget.CardView
+        android:id="@+id/activityLogin_cardview_connection"
+        android:layout_width="@dimen/activityLogin_cardview_width"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/activityLogin_cardview_marginTop">
+        <LinearLayout
+          android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="40dp">
+            <TextView
+                android:text="@string/activityLogin_cardview_titleConnexion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/primary"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/activityLogin_textInputLayout_matriculeNumber"
+                android:layout_marginTop="20dp"
+                android:layout_above="@+id/activityLogin_textInputLayout_password">
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/activityLogin_textInputEditText_matriculeNumber"
+                    android:hint="@string/activityLogin_textInputEditText_matriculeNumber"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/activityLogin_textInputLayout_password"
+                android:layout_marginTop="10dp"
+                android:layout_above="@+id/activityLogin_btn_valid">
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/activityLogin_textInputEditText_password"
+                    android:hint="@string/activityLogin_textInputEditText_password"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/activityLogin_btn_valid"
+                android:text="@string/activityLogin_btn_valid"
+                android:theme="@style/ButtonBlueBackground"
+                android:layout_above="@+id/activityLogin_btn_askNewPassword" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/activityLogin_btn_askNewPassword"
+                android:text="@string/activityLogin_btn_askNewPassword"
+                android:theme="@style/ButtonWhiteBackground"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_alignParentBottom="true" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/activityLogin_cardview_newPassword"
+        android:layout_width="@dimen/activityLogin_cardview_width"
+        android:layout_height="@dimen/activityLogin_cardview_height"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/activityLogin_cardview_marginTop">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/activityLogin_cardview_padding">
+            <TextView
+                android:text="@string/activityLogin_cardview_titleNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/primary"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/activityLogin_textInputLayout_newPassword_matriculeNumber"
+                android:layout_above="@+id/activityLogin_textInputLayout_newPassword_email">
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/activityLogin_textInputEditText_newPassword_matriculeNumber"
+                    android:hint="@string/activityLogin_textInputEditText_newPassword_matriculeNumber"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/activityLogin_textInputLayout_newPassword_email"
+                android:layout_above="@+id/activityLogin_btn_newPassword_valid">
+              <android.support.design.widget.TextInputEditText
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:inputType="textEmailAddress"
+                  android:id="@+id/activityLogin_textInputEditText_newPassword_email"
+                  android:hint="@string/activityLogin_textInputEditText_newPassword_email"
+                  android:singleLine="true"
+                  android:textSize="18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/activityLogin_btn_newPassword_valid"
+                android:text="@string/activityLogin_btn_newPassword_valid"
+                android:theme="@style/ButtonBlueBackground"
+                android:layout_above="@+id/activityLogin_btn_newPassword_cancel" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/activityLogin_btn_newPassword_cancel"
+                android:text="@string/activityLogin_btn_newPassword_cancel"
+                android:theme="@style/ButtonWhiteBackground"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
+  <ImageView
+      android:src="@drawable/db_icon"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="25dp"
+      android:layout_marginBottom="50dp" />
+</LinearLayout>
+</ScrollView>

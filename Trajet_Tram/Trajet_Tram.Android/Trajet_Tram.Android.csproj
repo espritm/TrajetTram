@@ -1,0 +1,1440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.3\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.3\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{1825F0E4-5D55-4149-ACEB-6BB48F95273B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Trajet_Tram.Droid</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <AssemblyName>Trajet_Tram.Android</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AndHUD, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AndHUD.1.2.0\lib\MonoAndroid\AndHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.0.12.0\lib\MonoAndroid403\Microsoft.Azure.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Analytics, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Analytics.0.12.0\lib\MonoAndroid403\Microsoft.Azure.Mobile.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Analytics.Android.Bindings, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Analytics.0.12.0\lib\MonoAndroid403\Microsoft.Azure.Mobile.Analytics.Android.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Android.Bindings, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.0.12.0\lib\MonoAndroid403\Microsoft.Azure.Mobile.Android.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Crashes, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Crashes.0.12.0\lib\MonoAndroid403\Microsoft.Azure.Mobile.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Crashes.Android.Bindings, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Crashes.0.12.0\lib\MonoAndroid403\Microsoft.Azure.Mobile.Crashes.Android.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity, Version=2.4.0.72, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.2.4.0.72-beta\lib\MonoAndroid10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions, Version=2.4.0.72, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.2.4.0.72-beta\lib\MonoAndroid10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.CurrentActivity, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.CurrentActivity.1.0.1\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.4.0.1\lib\MonoAndroid10\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.4.0.1\lib\MonoAndroid10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.0.1\lib\MonoAndroid10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.0.1\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings, Version=3.0.0.66, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.3.0.0.66-beta\lib\MonoAndroid10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.3.0.0.66-beta\lib\MonoAndroid10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.105.2.3\lib\MonoAndroid10\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\sqlite-net-pcl.1.4.118\lib\netstandard1.1\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLite.Net.Core-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.1.5\lib\MonoAndroid\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.1.5\lib\MonoAndroid\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.core.1.1.5\lib\MonoAndroid\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.lib.e_sqlite3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e4ad490600e2234c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.lib.e_sqlite3.android.1.1.5\lib\MonoAndroid\SQLitePCLRaw.lib.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.provider.e_sqlite3.android.1.1.5\lib\MonoAndroid\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\monoandroid\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\monoandroid\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Annotations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Annotations.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Compat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Compat.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Core.UI.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Core.Utils.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Design.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Fragment.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Media.Compat.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Transition, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Transition.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Transition.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v7.AppCompat.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v7.CardView.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v7.RecyclerView.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Android.Support.Vector.Drawable.25.3.1\lib\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Trajet_Tram\Trajet_Tram.csproj">
+      <Name>Trajet_Tram</Name>
+      <Project>{D614B680-3883-4721-9CAB-C09245F8E9D9}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\Activity_Dashboard.cs" />
+    <Compile Include="Activities\Activity_Login.cs" />
+    <Compile Include="Activities\Activity_trajetDetails.cs" />
+    <Compile Include="Activities\Activity_Splash.cs" />
+    <Compile Include="Adapters\ListviewAdapter_Display_arret.cs" />
+    <Compile Include="Adapters\RecyclerviewAdapter_Display_Marches.cs" />
+    <Compile Include="Application_TrajetTram.cs" />
+    <Compile Include="Fragments\Fragment_Parameters.cs" />
+    <Compile Include="Fragments\Fragment_ListMarches.cs" />
+    <Compile Include="Utils\AskForPermissions.cs" />
+    <Compile Include="Utils\DynamicUIBuild_Utils.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\FileAccessManager.cs" />
+    <Compile Include="Utils\FragmentEnum.cs" />
+    <Compile Include="Utils\SensorEventListener.cs" />
+    <Compile Include="ViewHolders\ViewHolder_Display_trajets.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <AndroidAsset Include="Assets\pdfjs\LICENSE" />
+    <AndroidAsset Include="Assets\pdfjs\web\compressed.tracemonkey-pldi-09.pdf" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\78-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\78-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\78-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\78-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\78-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\78-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\78ms-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\78ms-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\83pv-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\90ms-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\90ms-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\90msp-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\90msp-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\90pv-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\90pv-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Add-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Add-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Add-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Add-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-CNS1-0.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-CNS1-1.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-CNS1-2.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-CNS1-3.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-CNS1-4.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-CNS1-5.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-CNS1-6.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-CNS1-UCS2.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-GB1-0.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-GB1-1.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-GB1-2.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-GB1-3.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-GB1-4.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-GB1-5.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-GB1-UCS2.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Japan1-0.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Japan1-1.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Japan1-2.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Japan1-3.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Japan1-4.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Japan1-5.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Japan1-6.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Japan1-UCS2.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Korea1-0.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Korea1-1.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Korea1-2.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Adobe-Korea1-UCS2.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\B5pc-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\B5pc-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\CNS-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\CNS-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\CNS1-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\CNS1-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\CNS2-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\CNS2-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\ETen-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\ETen-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\ETenms-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\ETenms-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\ETHK-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\ETHK-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Ext-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Ext-RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Ext-RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Ext-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GB-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GB-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GB-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GB-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBK-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBK-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBK2K-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBK2K-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBKp-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBKp-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBpc-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBpc-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBT-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBT-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBT-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBT-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBTpc-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\GBTpc-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Hankaku.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Hiragana.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKdla-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKdla-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKdlb-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKdlb-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKgccs-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKgccs-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKm314-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKm314-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKm471-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKm471-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKscs-B5-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\HKscs-B5-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Katakana.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSC-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSC-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSC-Johab-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSC-Johab-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSCms-UHC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSCms-UHC-HW-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSCms-UHC-HW-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSCms-UHC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSCpc-EUC-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\KSCpc-EUC-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\LICENSE" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\NWP-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\NWP-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\RKSJ-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\RKSJ-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\Roman.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniCNS-UCS2-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniCNS-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniCNS-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniCNS-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniCNS-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniCNS-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniCNS-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniCNS-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniGB-UCS2-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniGB-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniGB-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniGB-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniGB-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniGB-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniGB-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniGB-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UCS2-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UCS2-HW-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UCS2-HW-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS2004-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS2004-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS2004-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS2004-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS2004-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJIS2004-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJISPro-UCS2-HW-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJISPro-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJISPro-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJISX0213-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJISX0213-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJISX02132004-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniJISX02132004-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniKS-UCS2-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniKS-UCS2-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniKS-UTF16-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniKS-UTF16-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniKS-UTF32-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniKS-UTF32-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniKS-UTF8-H.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\UniKS-UTF8-V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\V.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\cmaps\WP-Symbol.bcmap" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\locale.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ach\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\af\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ak\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\an\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ar\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\as\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ast\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\az\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\be\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\bg\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\bn-BD\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\bn-IN\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\br\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\bs\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ca\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\cs\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\csb\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\cy\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\da\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\de\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\el\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\en-GB\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\en-US\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\en-ZA\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\eo\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\es-AR\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\es-CL\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\es-ES\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\es-MX\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\et\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\eu\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\fa\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ff\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\fi\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\fr\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\fy-NL\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ga-IE\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\gd\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\gl\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\gu-IN\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\he\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\hi-IN\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\hr\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\hu\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\hy-AM\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\id\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\is\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\it\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ja\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ka\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\kk\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\km\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\kn\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ko\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ku\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\lg\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\lij\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\lt\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\lv\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\mai\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\mk\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ml\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\mn\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\mr\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ms\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\my\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\nb-NO\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\nl\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\nn-NO\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\nso\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\oc\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\or\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\pa-IN\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\pl\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\pt-BR\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\pt-PT\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\rm\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ro\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ru\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\rw\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\sah\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\si\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\sk\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\sl\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\son\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\sq\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\sr\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\sv-SE\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\sw\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ta\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ta-LK\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\te\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\th\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\tl\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\tn\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\tr\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\uk\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\ur\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\vi\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\wo\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\xh\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\zh-CN\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\zh-TW\viewer.properties" />
+    <AndroidAsset Include="Assets\pdfjs\web\locale\zu\viewer.properties" />
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\dashboardActivity_navigationView_header.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activityLogin.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragmentParameters.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragmentListTrajets.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\item_display_trajets.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\item_display_arret.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\item_display_gpsLevel.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\dashboardActivity.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\Strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\styles.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\colors.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\left_menus.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_add_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_back_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_clear_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_exit_to_app_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_back_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_clear_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_exit_to_app_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_add_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_back_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_clear_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_exit_to_app_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_add_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_back_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_clear_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_exit_to_app_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_menu_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_add_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_back_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_clear_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_exit_to_app_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_menu_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_account_circle_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_account_circle_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_account_circle_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_account_circle_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_account_circle_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_event_note_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_event_note_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_event_note_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_event_note_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_event_note_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_activityDashboard.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\db_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\db_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\db_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\db_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\db_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\dimen.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_home_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_home_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_home_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_home_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_home_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings_brightness_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings_brightness_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings_brightness_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings_brightness_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings_brightness_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings_brightness_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings_brightness_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings_brightness_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings_brightness_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings_brightness_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activitytrajetDetails.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_radio_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_train_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_train_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_radio_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_train_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_radio_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_train_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_radio_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_train_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_radio_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\menu_activityTrajetDetails.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_description_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_list_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_description_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_list_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_description_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_list_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_description_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_list_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_description_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_list_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_trending_down_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_trending_flat_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_trending_up_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_trending_down_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_trending_flat_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_trending_up_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_trending_down_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_trending_flat_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_trending_up_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_trending_down_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_trending_flat_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_trending_up_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_trending_down_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_trending_flat_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_trending_up_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_error_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_error_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_error_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_error_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_error_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_error_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_error_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_error_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_error_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_error_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash_background.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_report_problem_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_report_problem_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_report_problem_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_report_problem_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_report_problem_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_fast_forward_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_fast_forward_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_fast_forward_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_fast_forward_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_fast_forward_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_gps_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_gps_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_gps_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_gps_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_gps_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lvl_easy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lvl_easy_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lvl_extrem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lvl_extrem_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lvl_hard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lvl_hard_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lvl_medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lvl_medium_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\lvl_easy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\lvl_easy_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\lvl_extrem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\lvl_extrem_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\lvl_hard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\lvl_hard_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\lvl_medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\lvl_medium_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\lvl_easy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\lvl_easy_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\lvl_extrem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\lvl_extrem_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\lvl_hard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\lvl_hard_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\lvl_medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\lvl_medium_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\lvl_easy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\lvl_easy_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\lvl_extrem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\lvl_extrem_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\lvl_hard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\lvl_hard_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\lvl_medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\lvl_medium_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\lvl_easy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\lvl_easy_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\lvl_extrem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\lvl_extrem_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\lvl_hard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\lvl_hard_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\lvl_medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\lvl_medium_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo_pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\pdfjs\build\pdf.js" />
+    <AndroidAsset Include="Assets\pdfjs\build\pdf.worker.js" />
+    <AndroidAsset Include="Assets\pdfjs\web\compatibility.js" />
+    <AndroidAsset Include="Assets\pdfjs\web\debugger.js" />
+    <AndroidAsset Include="Assets\pdfjs\web\l10n.js" />
+    <AndroidAsset Include="Assets\pdfjs\web\viewer.css" />
+    <AndroidAsset Include="Assets\pdfjs\web\viewer.html" />
+    <AndroidAsset Include="Assets\pdfjs\web\viewer.js" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\annotation-check.svg" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\annotation-comment.svg" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\annotation-help.svg" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\annotation-insert.svg" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\annotation-key.svg" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\annotation-newparagraph.svg" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\annotation-noicon.svg" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\annotation-note.svg" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\annotation-paragraph.svg" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\findbarButton-next-rtl.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\findbarButton-next-rtl%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\findbarButton-next.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\findbarButton-next%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\findbarButton-previous-rtl.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\findbarButton-previous-rtl%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\findbarButton-previous.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\findbarButton-previous%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\grab.cur" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\grabbing.cur" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\loading-icon.gif" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\loading-small.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\loading-small%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-documentProperties.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-documentProperties%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-firstPage.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-firstPage%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-handTool.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-handTool%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-lastPage.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-lastPage%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-rotateCcw.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-rotateCcw%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-rotateCw.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\secondaryToolbarButton-rotateCw%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\shadow.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\texture.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-bookmark.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-bookmark%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-download.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-download%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-menuArrows.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-menuArrows%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-openFile.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-openFile%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-pageDown-rtl.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-pageDown-rtl%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-pageDown.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-pageDown%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-pageUp-rtl.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-pageUp-rtl%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-pageUp.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-pageUp%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-presentationMode.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-presentationMode%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-print.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-print%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-search.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-search%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-secondaryToolbarToggle-rtl.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-secondaryToolbarToggle-rtl%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-secondaryToolbarToggle.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-secondaryToolbarToggle%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-sidebarToggle-rtl.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-sidebarToggle-rtl%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-sidebarToggle.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-sidebarToggle%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-viewAttachments.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-viewAttachments%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-viewOutline-rtl.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-viewOutline-rtl%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-viewOutline.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-viewOutline%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-viewThumbnail.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-viewThumbnail%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-zoomIn.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-zoomIn%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-zoomOut.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\toolbarButton-zoomOut%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\treeitem-collapsed-rtl.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\treeitem-collapsed-rtl%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\treeitem-collapsed.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\treeitem-collapsed%402x.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\treeitem-expanded.png" />
+    <AndroidAsset Include="Assets\pdfjs\web\images\treeitem-expanded%402x.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_fullscreen_exit_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_fullscreen_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_fullscreen_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_fullscreen_exit_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_fullscreen_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_fullscreen_exit_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_fullscreen_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_fullscreen_exit_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_fullscreen_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_close_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_fullscreen_exit_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_sync_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_sync_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_sync_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_sync_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_sync_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_screen_rotation_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_screen_rotation_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_screen_rotation_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_screen_rotation_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_screen_rotation_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_timelapse_black_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_timelapse_black_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_timelapse_black_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_timelapse_black_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_timelapse_black_48dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_place_black_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_place_black_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_place_black_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_place_black_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_place_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\notification_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\notification_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\notification_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\notification_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\notification_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_gps_off_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_gps_off_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_gps_off_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_gps_off_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_gps_off_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_gps_not_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_gps_not_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_gps_not_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_gps_not_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_gps_not_fixed_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_all_out_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_all_out_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_all_out_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_all_out_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_all_out_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_r_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_r_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_r_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_r_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_r_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_delete_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_delete_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_delete_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_delete_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_delete_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_gps_off_BIG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_gps_off_BIG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_gps_off_BIG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_gps_off_BIG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_gps_off_BIG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_more_vert_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_more_vert_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_more_vert_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_more_vert_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_more_vert_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_highlight_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_highlight_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_highlight_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_highlight_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_highlight_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_help_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_help_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_help_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_help_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_help_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo_pdf_artic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo_pdf_ate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo_pdf_ehouat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo_pdf_other.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo_pdf_rt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_addARTICmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_addATEmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_addARTICmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_addATEmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_addARTICmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_addATEmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_addARTICmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_addATEmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_addARTICmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_addATEmarquepage_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\backgroundSpinnerNightMode.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\backgroundSpinnerDayMode.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_drop_down_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_drop_down_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_drop_down_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_drop_down_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_drop_down_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_drop_down_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_drop_down_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_drop_down_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_drop_down_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_drop_down_white_48dp.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.3\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.3\build\Xamarin.Build.Download.props'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.3\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.3\build\Xamarin.Build.Download.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Annotations.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Annotations.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Annotations.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Annotations.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Core.UI.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Core.UI.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Core.Utils.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Core.Utils.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Media.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Media.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Fragment.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Fragment.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Transition.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Transition.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.v7.RecyclerView.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.v7.RecyclerView.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Vector.Drawable.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.v7.AppCompat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.v7.AppCompat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Design.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Design.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.v7.CardView.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.CardView.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.v7.CardView.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.CardView.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.3\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.3\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Annotations.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Annotations.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Core.UI.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Core.UI.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Core.Utils.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Core.Utils.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Media.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Media.Compat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Fragment.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Fragment.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Transition.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Transition.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.v7.RecyclerView.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.v7.RecyclerView.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.v7.AppCompat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.v7.AppCompat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.Design.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Design.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets')" />
+  <Import Project="..\..\packages\Xamarin.Android.Support.v7.CardView.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.CardView.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.v7.CardView.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.CardView.targets')" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+</Project>

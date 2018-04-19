@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_display_trajets_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:foreground="?selectableItemBackground">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/item_display_trajets_progressbar"
+            style="@android:style/Widget.ProgressBar.Small" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_dark"
+                android:orientation="vertical"
+                android:paddingLeft="30dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+                <TextView
+                    android:id="@+id/item_display_trajets_textview_refNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textColor="@color/white" />
+                <TextView
+                    android:id="@+id/item_display_trajets_textview_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/primary_light" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="100dp"
+                android:paddingTop="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/item_display_trajets_textview_timeStart"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/item_display_trajets_textview_locationStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="40dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/item_display_trajets_textview_timeEnd"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/item_display_trajets_textview_locationEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="40dp" />
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/item_display_trajets_btn_modify"
+                        android:text="@string/item_display_trajets_btn_modify"
+                        android:theme="@style/ButtonWhiteBackground"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_alignParentLeft="true" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/item_display_trajets_btn_open"
+                        android:text="@string/item_display_trajets_btn_open"
+                        android:theme="@style/ButtonWhiteBackground_Red"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_marginLeft="40dp"
+                        android:layout_toRightOf="@id/item_display_trajets_btn_modify" />
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/item_display_trajets_btn_delete"
+                        android:src="@drawable/ic_delete_black_24dp"
+                        android:tint="#ff607d8b"
+                        android:layout_alignParentEnd="true"
+                        android:backgroundTint="#00ffffff" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="TrajetTramTheme_dayMode" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primary_dark</item>
+    <item name="colorAccent">@color/primary_light</item>
+    <item name="actionMenuTextColor">@color/white</item>
+    <item name="android:actionMenuTextColor">@color/white</item>
+    <item name="actionOverflowButtonStyle">@style/OverFlow</item>
+  </style>
+
+  <style name="TrajetTramTheme_nightMode" parent="Theme.AppCompat.NoActionBar">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primary_light</item>
+    <item name="colorAccent">@color/primary_dark</item>
+    <item name="actionMenuTextColor">@color/white</item>
+    <item name="android:actionMenuTextColor">@color/white</item>
+    <item name="android:textColorSecondary">@color/white</item>
+  </style>
+
+
+  <style name="TrajetTramTheme_actionBar_dayMode" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primary_dark</item>
+    <item name="colorAccent">@color/primary_light</item>
+    <item name="actionMenuTextColor">@color/white</item>
+    <item name="android:actionMenuTextColor">@color/white</item>
+  </style>
+
+  <style name="TrajetTramTheme_actionBar_nightMode" parent="Theme.AppCompat">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primary_light</item>
+    <item name="colorAccent">@color/primary_dark</item>
+    <item name="actionMenuTextColor">@color/white</item>
+    <item name="android:actionMenuTextColor">@color/white</item>
+  </style>
+
+  <style name="AppTabLayout" parent="Widget.Design.TabLayout">
+    <item name="tabIndicatorHeight">2dp</item>
+    <item name="tabPaddingStart">6dp</item>
+    <item name="tabPaddingEnd">6dp</item>
+    <item name="tabBackground">?attr/selectableItemBackground</item>
+    <item name="tabTextAppearance">@style/TabTextAppearance</item>
+    <item name="tabIndicatorColor">@color/primary_dark</item>
+    <item name="tabSelectedTextColor">@color/primary_dark</item>
+  </style>
+  
+  <style name="TabTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <item name="textAllCaps">false</item>
+    <item name="android:textColor">@color/primary_light</item>
+    <item name="android:textSize">12sp</item>
+  </style>
+
+  <style name="OverFlow" parent="@style/Widget.AppCompat.Light.ActionButton.Overflow">
+    <item name="android:src">@drawable/ic_more_vert_white_24dp</item>
+  </style>
+  
+  
+  <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <item name="android:textSize">18sp</item>
+  </style>
+
+  <style name="TextInputLayout.WhiteHint" parent="Widget.Design.TextInputLayout">
+    <item name="android:textColorHint">@color/white</item>
+  </style>
+
+  <style name="DatePicker_Red_dayMode" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">@color/red_primary</item>
+  </style>
+
+  <style name="Theme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash_background</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+
+
+  <style name="BorderlessButtonBase" parent="Widget.AppCompat.Button.Borderless">
+    <item name="android:textSize">14sp</item>
+    <item name="android:gravity">center</item>
+    <item name="android:padding">10dp</item>
+    <item name="colorControlHighlight">?attr/colorAccent</item>
+  </style>
+
+  <style name="ButtonRedBackground" parent="BorderlessButtonBase">
+    <item name="colorButtonNormal">@color/red_primary</item>
+    <item name="colorControlHighlight">@color/red_primary_light</item>
+    <item name="android:textColor">@color/white</item>
+  </style>
+
+  <style name="ButtonBlueBackground" parent="BorderlessButtonBase">
+    <item name="colorButtonNormal">?attr/colorPrimary</item>
+    <item name="android:textColor">@color/white</item>
+  </style>
+
+  <style name="ButtonWhiteBackground" parent="BorderlessButtonBase">
+    <item name="colorButtonNormal">@color/white</item>
+    <item name="android:textColor">?attr/colorPrimary</item>
+  </style>
+
+  <style name="ButtonWhiteBackground_Red" parent="ButtonWhiteBackground">
+    <item name="android:textColor">@color/red_primary</item>
+    <item name="colorControlHighlight">@color/red_primary_light</item>
+  </style>
+  
+</resources>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/dashboardActivity_menu_save"
+    android:title="@string/dashboardActivity_menu_save"
+    app:showAsAction="always|withText"/>
+  <item
+    android:id="@+id/dashboardActivity_menu_nightdaymode"
+    android:title="@string/dashboardActivity_menu_nightdaymode"
+    app:showAsAction="never">
+    <menu>
+      <group android:checkableBehavior="single">
+        <item
+          android:id="@+id/dashboardActivity_menu_dayMode"
+          android:title="@string/dashboardActivity_menu_dayMode"/>
+        <item
+          android:id="@+id/dashboardActivity_menu_nightMode"
+          android:title="@string/dashboardActivity_menu_nightMode"/>
+        <item
+          android:id="@+id/dashboardActivity_menu_automaticNightMode"
+          android:title="@string/dashboardActivity_menu_automaticNightMode"/>
+      </group>
+    </menu>
+  </item>
+  <item
+    android:id="@+id/dashboardActivity_menu_addtrajetTest"
+    android:title="@string/dashboardActivity_menu_addtrajetTest"
+    app:showAsAction="never"/>
+  <item
+    android:id="@+id/dashboardActivity_menu_restoreDefault"
+    android:title="@string/dashboardActivity_menu_restoreDefault"
+    app:showAsAction="never"/>
+</menu>
+

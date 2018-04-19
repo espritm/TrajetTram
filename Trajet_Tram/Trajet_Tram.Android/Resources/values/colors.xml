@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <color name="primary">#607D8B</color>
+  <color name="primary_dark">#485B64</color>
+  <color name="primary_light">#859AA4</color>
+  <color name="white">#ffffff</color>
+  <color name="black">#000000</color>
+  <color name="red_primary">#F44336</color>
+  <color name="red_primary_light">#FF8F86</color>
+  <color name="red_primary_disabled">#4DF44336</color>
+  <color name="red_error">#FF0000</color>
+  <color name="grey_disable">#313131</color>
+  <color name="grey_light">#817c7c</color>
+  <color name="white_button_clicked">#EAEAEA</color>
+  <color name="tabLayoutBackground">#CDD6DB</color>
+  <color name="listview_detailtrajets_lightgrey">#1A000000</color>
+  <color name="listview_detailtrajets_darkgrey">#33000000</color>
+  <color name="green">#80A93D</color>
+  <color name="hilightArret_dayMode">#28000000</color> <!--black with 28 alpha-->
+  <color name="hilightArret_nightMode">#28ffffff</color> <!--white with 28 alpha-->
+  <color name="flashy_yellow">#FCFF00</color>
+</resources>
